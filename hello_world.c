@@ -43,7 +43,18 @@ int main(int argc, char** argv) {
 		c2 -= 1;
 	}
 
+	char *a = "this is a string?";
 
+	if (sizeof a == 6) {
+		printf("The size of a in bytes is: %zu\n", sizeof a);
+		printf("WIll be printed regardless\n");
+	}
+
+	else if (sizeof a == 20) {
+		printf("That's a bit crass");
+	}
+	else
+		printf("Lucky Find!\n");
 	pString(7);
 
 	// puts("Hello, world!\n");
