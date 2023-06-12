@@ -40,6 +40,7 @@ mpca_lang(MPCA_LANG_DEFAULT,
 
 mpc_cleanup(4, Adjective, Noun, Phrase, Doge);
 
+// ch5 parsing
 // https://www.buildyourownlisp.com -> <scheme>, <domain name>
 // scheme -> <protocol> "://"
 // domain name -> (<subdomain> <dot>)* <sld> <dot> <tld>
@@ -52,7 +53,7 @@ mpc_cleanup(4, Adjective, Noun, Phrase, Doge);
 // 
 
 // 0.01 and 52.221 -> <num>+ <period> <num>+
-// num -> [0-9]
+// num -> [0-9]+
 // period -> "."
 
 // polish notation -> exp
