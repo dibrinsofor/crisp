@@ -425,3 +425,19 @@ void lval_println(lval *v) {
 
 // tried changing instances of the operand from long to double and type casting 
 // our modulus operands from double to int. does not work. Q: Ask
+
+// ch9. S-expressions
+// open and close in lval_expr_print(); live on the stack;
+
+// llval *result in main() points to some space in global memory.
+
+// strcpy copies strings from a src to a dest
+
+// realloc reallocates the size of an object pointed to by a pointer. 
+// it acc deallocates and points to a bigger heap
+
+// memmove copies n chars from one src to a dest and is best when working 
+// with overlapping memory blocks. else comparable to memcpy. 
+// See: https://stackoverflow.com/questions/4415910/memcpy-vs-memmove
+
+// todo: Q. double decimal
