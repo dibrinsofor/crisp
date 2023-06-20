@@ -546,3 +546,7 @@ void lval_println(lval *v) {
 // See: https://stackoverflow.com/questions/4415910/memcpy-vs-memmove
 
 // todo: Q. double decimal
+
+// ch10. Q-expression
+// add rule for the syntax, add new layer (or type or sugar) above core language,
+// parse from ast, add functionality for new feature
