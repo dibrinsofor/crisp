@@ -411,8 +411,17 @@ lval *builtin_op(lenv *e, lval *a, char *op) {
     return x;
 }
 
-// todo: preprocessor that takes operation
+//macros or preprocessors are like functions that generate some code
+// before compile time. makes code easier to read?
+// todo: why are these necessary? seem like functions alts.
+#define LASSERT(args, cond, fmt, ...) \
+    if (!(cond)) { \
+        lval *err = lval_err(fmt, ##__VA_ARGS__); \
+        lval_delete(args); \
+        return err; \
+    }
 
+// todo: preprocessor that takes operation
 lval *builtin_add(lenv *e, lval *a) {
     LASSERT(a, a->cell[0]->type == LVAL_QEXPR, "Function '+' passed incorrect type.", "Got %s, Expected %s", ltype_name(a->cell[0]->type), ltype_name(LVAL_QEXPR));
     return builtin_op(e, a, "+");
@@ -443,15 +452,6 @@ lval *builtin_mod(lenv *e, lval *a) {
     return builtin_op(e, a, "%");
 }
 
-//macros or preprocessors are like functions that generate some code
-// before compile time. makes code easier to read?
-// todo: why are these necessary? seem like functions alts.
-#define LASSERT(args, cond, fmt, ...) \
-    if (!(cond)) { \
-        lval *err = lval_err(fmt, ##__VA_ARGS__); \
-        lval_delete(args); \
-        return err; \
-    }
 
 lval *builtin_head(lenv *e, lval* a) {
     LASSERT(a, a->count == 1, "Function 'head' passed too many arguments!", "Got %i, Expected %i", a->count, 1);
@@ -784,3 +784,6 @@ lval *lval_copy(lval *v) {
 // ch10. Q-expression
 // add rule for the syntax, add new layer (or type or sugar) above core language,
 // parse from ast, add functionality for new feature
+
+
+// ch11. Variables
