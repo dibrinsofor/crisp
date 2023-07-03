@@ -1,8 +1,8 @@
 ### crisp
 
-Works on Windows and Unix machines.
+A lisp implementation (with a repl) built on top of Daniel Holden's ([theorangeduck](https://theorangeduck.com)) mpc parsing library. Works on Windows and Unix machines.
 
-#### Build the REPL
+#### Build
 ```bash
 gcc mpc.c repl.c -lm -ledit -o repl
 ```
@@ -13,4 +13,6 @@ gcc mpc.c repl.c -lm -ledit -o repl
 ./repl
 ```
 
-#### Specs
+#### Add. Specs
+- `def` to declare variables.
+- `(@ (x y) {x + y})`
