@@ -15,4 +15,4 @@ gcc mpc.c repl.c -lm -ledit -o repl
 
 #### Add. Specs
 - `def` to declare variables.
-- `(@ (x y) {x + y})`
+- `def {a-m} (\ {x y} {+ x y})`
